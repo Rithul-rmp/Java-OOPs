@@ -1,1 +1,84 @@
 
+
+import java.util.*;
+class student
+{
+
+String[] name= new String[10];
+int rollno[]=new int[10];
+int P_num[]=new int[15];
+int age[]=new int[3];
+float CGPA[]=new float[3];
+
+
+void read()
+{
+for(int k=0;k<10;k++)
+{
+Scanner obj =new Scanner(System.in);
+System.out.println("Enter name");
+name[k]=obj.nextLine();
+System.out.println("Enter roll number");
+rollno[k]=obj.nextInt();
+System.out.println("Enter Phone number");
+P_num[k]=obj.nextInt();
+System.out.println("Enter age");
+age[k]=obj.nextInt();
+System.out.println("Enter CGPA");
+CGPA[k]=obj.nextFloat();
+System.out.println("\n");
+}
+}
+
+void cgpa()
+{
+   String c1= name[0];
+   float c2= CGPA[0];
+   for (int j=0;j<10;j++)
+  { 
+  if (CGPA[j]>c2)
+  {
+    c1=name[j]; 
+    c2=CGPA[j];
+   }
+}
+System.out.println("Highest CGPA Student : "+c2);
+}
+
+void phone()
+{
+   int p1= P_num[0];
+   for (int j=0;j<10;j++)
+  { 
+  if (name[j].toUpperCase().equals("ANU"))
+  {
+    p1=P_num[j];
+   }
+}
+System.out.println("ANU's Phone Number : "+p1);
+}
+
+void smallest()
+{
+   int s1= rollno[0];
+   int s2= age[0];
+   for (int j=0;j<10;j++)
+  { 
+  if (age[j]<s2)
+  {
+    s1=rollno[j]; 
+    s2=age[j];
+   }
+}
+System.out.println("Youngest Students Roll number : "+s1);
+}
+public static void main(String args[])
+{
+student s1=new student();
+s1.read();
+s1.cgpa();
+s1.phone();
+s1.smallest();
+}
+}
+
